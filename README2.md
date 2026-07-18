@@ -7,7 +7,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![CUDA](https://img.shields.io/badge/CUDA-12.6-76b900)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8.0%2Bcu126-ee4c2c)
-![Tests](https://img.shields.io/badge/tests-38%20passed-success)
+![Tests](https://img.shields.io/badge/tests-52%20passed-success)
 
 **Son doğrulama:** 18 Temmuz 2026  
 **Pilot durumu:** Çalışan bağımsız teknik pilot  
@@ -144,7 +144,7 @@ flowchart LR
 - Ruff, mypy ve pytest kontrolleri
 - CPU ve CUDA Docker tanımları
 
-**Kabul sonucu:** Sistem doktorunda 11/11 kontrol `PASS`; 38 test geçti.
+**Kabul sonucu:** Sistem doktorunda 11/11 kontrol `PASS`; 52 test geçti.
 
 ### M2 — Dataset Governance
 
