@@ -157,8 +157,8 @@ flowchart LR
 | The Met Open Access | 8 ilgili | 21 ilgisiz kayıt | Public domain |
 | **Birleşik set** | **386** | **0 duplicate, 0 invalid** | `TRAINING_APPROVED` |
 
-Birleşik manifest içerik hash'i:
-`f5aa2ebb44501419e19d8751a05da067234b60a9a8823ee487a205bda76e18dd`.
+Birleşik manifest içerik hash'i: `[REDACTED_PUBLIC]`.
+Tam değer yalnızca private manifest ve şirket içi kanıt kaydında tutulur.
 
 Hak sahibi yetkisi `USER_ATTESTED_WRITTEN_PERMISSION_2026-07-18` referansıyla kaydedilmiştir. İmzalı
 belgenin kendisi repoda değildir; yetkili tarafın doküman yönetim sisteminde tutulmalıdır.
@@ -205,7 +205,7 @@ Training run   : train_20260718_063409
 Artifact       : pytorch_lora_weights.safetensors
 Artifact size  : 23,390,424 byte
 Tensor count   : 1,120
-SHA-256        : 66eadc5146cfbde5307e59a96c9562416fc241f9d2a8be59d5f52a0620d151d3
+SHA-256 public prefix : `66eadc5146cf…`
 Lifecycle      : ACTIVE_COMPANY_PILOT
 ```
 
@@ -642,7 +642,7 @@ LoRA üretimleri karşılaştırıldı.
 | Sinyal | Sonuç |
 |---|---|
 | Base SHA-256 | `c798b241de3626604cccc1a9259ca40d03f45235ad3e6ca91b53e7cfc78e8523` |
-| LoRA SHA-256 | `084c7ce31703939fd664367381f86277515ab40a4008934c8c744d07765e5780` |
+| LoRA SHA-256 public prefix | `084c7ce31703…` |
 | Aynı çıktı mı? | Hayır |
 | Ortalama mutlak piksel farkı | 74,38 / 255 |
 

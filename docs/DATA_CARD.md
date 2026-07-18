@@ -8,7 +8,7 @@ Status: **TRAINING_APPROVED**
 - The Met: 8 carpet/textile records marked public domain; 21 unrelated sample records excluded.
 - Deduplication and validation: 0 SHA-256 duplicates, 0 invalid images.
 - Trigger token: `mrcpt`.
-- Manifest content hash: `f5aa2ebb44501419e19d8751a05da067234b60a9a8823ee487a205bda76e18dd`.
+- Manifest content hash: `[REDACTED_PUBLIC]`; full value is retained in the private manifest.
 - Storage: `data/processed/carpet_lora_v1/`.
 - Metadata: `manifest.json`, `metadata.jsonl`, and `ATTRIBUTION.md`.
 

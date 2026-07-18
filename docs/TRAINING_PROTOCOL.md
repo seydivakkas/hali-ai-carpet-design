@@ -53,6 +53,6 @@ then may it be promoted to `ACTIVE_COMPANY_PILOT` in the LoRA Registry.
 - LoRA ID: `lora_07a6ab61f19c`
 - Runtime: 587.223 seconds
 - Artifact: 23,390,424 bytes / 1,120 tensors
-- Artifact SHA-256: `66eadc5146cfbde5307e59a96c9562416fc241f9d2a8be59d5f52a0620d151d3`
+- Artifact SHA-256 public prefix: `66eadc5146cf…`; full value remains in the private run manifest.
 - Inference: `gen_f40b1399e142`, 512×512, 15 steps, 23.070 seconds, `PASS`
 - Lifecycle: `ACTIVE_COMPANY_PILOT`

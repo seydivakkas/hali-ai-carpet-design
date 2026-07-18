@@ -20,7 +20,7 @@ bir halı görseli üretilmiştir.
 | Toplam koşu süresi | 587,223 saniye |
 | Tepe gözlenen GPU belleği | yaklaşık 7,12 GiB |
 | Nihai adaptör | 23.390.424 byte, 1.120 tensor |
-| Adaptör SHA-256 | `66eadc5146cfbde5307e59a96c9562416fc241f9d2a8be59d5f52a0620d151d3` |
+| Adaptör SHA-256 public prefix | `66eadc5146cf…` |
 | LoRA kayıt kimliği | `lora_07a6ab61f19c` |
 | Yaşam döngüsü | `ACTIVE_COMPANY_PILOT` |
 | Otomatik testler | 38 geçti |
@@ -35,8 +35,7 @@ Birleşik manifest `data/processed/carpet_lora_v1/manifest.json` altındadır. �
 - The Met: halı/tekstil ile ilgili 8 public-domain kayıt; ilgisiz 21 örnek dışlandı.
 - Normalize çıktı: tam halı görünümünü koruyan 768×768 JPEG.
 - SHA tabanlı tekilleştirme: 0 kopya, 0 geçersiz dosya.
-- Eğitim manifest hash'i:
-  `f5aa2ebb44501419e19d8751a05da067234b60a9a8823ee487a205bda76e18dd`.
+- Eğitim manifest hash'i: `[REDACTED_PUBLIC]` (full value is retained in the private manifest).
 
 Hak sahibi eğitim yetkisi uygulamada
 `USER_ATTESTED_WRITTEN_PERMISSION_2026-07-18` referansıyla kaydedilmiştir. Bu, kullanıcının yazılı
@@ -87,7 +86,7 @@ adaptör doğrulandıktan sonra smoke adaptörü `RETIRED` durumuna alınmışt�
 | Çözünürlük / adım | 512×512 / 15 |
 | Toplam süre | 23.070 ms |
 | Durum | `PASS` |
-| Görsel SHA-256 | `084c7ce31703939fd664367381f86277515ab40a4008934c8c744d07765e5780` |
+| Görsel SHA-256 public prefix | `084c7ce31703…` |
 | Simetri | 0,9049 |
 | Dikiş sürekliliği | 0,9577 |
 | Tekrarlanabilirlik | 0,5675 |
