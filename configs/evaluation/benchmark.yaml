@@ -1,0 +1,33 @@
+benchmark:
+  prompt_set_path: null  # Must be locked before evaluation
+  seed_set: [42, 123, 456, 789, 1024]
+  models_to_compare:
+    - model_id: sdxl_base_v1
+      lora_ids: []
+    - model_id: sdxl_base_v1
+      lora_ids: ["carpet_domain_v1"]
+  scheduler: EulerDiscreteScheduler
+  steps: 30
+  guidance_scale: 7.0
+  width: 1024
+  height: 1024
+  warmup_generations: 3
+  measured_generations: 10
+
+metrics:
+  fid: true
+  kid: true
+  clip_score: true
+  diversity: true
+  duplicate_rate: true
+  palette_delta_e: true
+  symmetry: true
+  seam: true
+  invalid_rate: true
+  latency: true
+  peak_vram: true
+
+note: >
+  Evaluation configuration per spec Section 20.
+  FID is not the sole verdict metric.
+  Results reported with same protocol for fair comparison.

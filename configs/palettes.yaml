@@ -1,0 +1,49 @@
+palettes:
+  classic_red_navy_v1:
+    status: design_reference_only
+    source: project_default
+    colors:
+      - "#7A1F2B"
+      - "#162A5A"
+      - "#E8DCC3"
+      - "#B58A3A"
+  earth_v1:
+    status: design_reference_only
+    source: project_default
+    colors:
+      - "#6B3E26"
+      - "#A05A2C"
+      - "#D6A66A"
+      - "#7A6A45"
+  jewel_tones_v1:
+    status: design_reference_only
+    source: project_default
+    colors:
+      - "#1B4332"
+      - "#4A1942"
+      - "#C9184A"
+      - "#F9C74F"
+  muted_pastels_v1:
+    status: design_reference_only
+    source: project_default
+    colors:
+      - "#C9ADA7"
+      - "#9A8C98"
+      - "#4A4E69"
+      - "#F2E9E4"
+  warm_neutrals_v1:
+    status: design_reference_only
+    source: project_default
+    colors:
+      - "#D4A373"
+      - "#FAEDCD"
+      - "#E9EDC9"
+      - "#CCD5AE"
+  indigo_rust_v1:
+    status: design_reference_only
+    source: project_default
+    colors:
+      - "#1D3557"
+      - "#E63946"
+      - "#F1FAEE"
+      - "#A8DADC"

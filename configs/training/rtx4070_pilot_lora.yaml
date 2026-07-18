@@ -1,0 +1,46 @@
+training:
+  run_profile: rtx4070_laptop_8gb
+  training_mode: caption_aware
+  base_model: artifacts/models/base/sdxl-base-1.0
+  vae_model: artifacts/models/base/sdxl-vae-fp16-fix
+  dataset_manifest: data/processed/carpet_lora_v1/manifest.json
+  resolution: 512
+  train_batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  max_train_steps: 100
+  rank: 4
+  alpha: 4
+  mixed_precision: fp16
+  gradient_checkpointing: true
+  precompute_text_embeddings: true
+  use_8bit_adam: true
+  allow_tf32: true
+  checkpointing_steps: 50
+  checkpoints_total_limit: 3
+  resume_from_checkpoint: null
+  snr_gamma: null  # A/B run: 5.0
+  validation_prompt: >-
+    mrcpt carpet design, geometric central medallion, multi-band border,
+    burgundy navy cream palette, flat full rug view
+  num_validation_images: 2
+  validation_epochs: 1
+  random_flip: false
+  seed: 42
+
+lora:
+  target: unet
+  train_text_encoder: false
+  adapter_name: carpet_domain_v1
+  trigger_token: mrcpt
+  default_scale: 0.8
+
+governance:
+  training_use: approved
+  restricted_catalog_permission_ref: USER_ATTESTED_WRITTEN_PERMISSION_2026-07-18
+  kaggle_license: MIT
+  met_license: public_domain
+
+note: >
+  First real SDXL LoRA pilot for the RTX 4070 Laptop GPU with 8 GB VRAM.
+  Quality promotion requires generated-sample and human-review evaluation.

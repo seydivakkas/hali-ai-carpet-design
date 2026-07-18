@@ -1,0 +1,9 @@
+lora:
+  adapter_name: carpet_domain_v1
+  base_model_id: sdxl_base_v1
+  target: unet
+  train_text_encoder: false
+  rank: 16
+  alpha: 16
+  default_scale: 0.8
+  max_scale: 1.5

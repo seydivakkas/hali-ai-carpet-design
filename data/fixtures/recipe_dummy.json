@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "recipe_id": "recipe_6708ecc0c91b",
+  "style_family": "anatolian",
+  "motifs": [
+    "medallion",
+    "geometric_floral"
+  ],
+  "composition": "central_medallion",
+  "border": "",
+  "symmetry": "",
+  "palette_id": "",
+  "free_text": "",
+  "negative_constraints": [
+    "text",
+    "watermark",
+    "logo",
+    "signature",
+    "frame",
+    "cut-off border",
+    "photographic room scene",
+    "folded rug",
+    "perspective distortion",
+    "low detail",
+    "severe blur",
+    "malformed repeated motif"
+  ],
+  "render_intent": "flat_design",
+  "seed": 42,
+  "width": 1024,
+  "height": 1024,
+  "steps": 30,
+  "guidance_scale": 7.0,
+  "scheduler": "configured",
+  "model_id": "hf-internal-testing/tiny-stable-diffusion-xl-pipe",
+  "lora_ids": [],
+  "lora_scales": []
+}

@@ -1,0 +1,10 @@
+services:
+  carpet-designer:
+    build:
+      context: .
+      dockerfile: Dockerfile.cpu
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts

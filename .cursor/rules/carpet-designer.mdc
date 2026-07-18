@@ -1,0 +1,23 @@
+---
+description: Halı AI Carpet Design implementation rules
+alwaysApply: true
+---
+
+# Carpet Designer Agent Rules
+
+- Read `HALI_AI_CARPET_DESIGN_MASTER_BUILD_SPEC.md` before architectural changes.
+- Do not import or embed WeaveVision anomaly-detection code.
+- Do not invent datasets, licenses, model results, FID values or business impact.
+- Do not claim manufacturability, originality or copyright safety without external evidence.
+- Keep UI thin; use services and typed domain schemas.
+- Use pathlib for all external paths.
+- Public APIs require type hints and Google-style docstrings.
+- Catch exceptions only at responsibility boundaries; never silently swallow errors.
+- Preserve dataset provenance and source license in every training manifest.
+- Never commit datasets, model weights, secrets, caches or generated collections.
+- Production paths must not contain TODO/pass-only/fake outputs.
+- Every feature requires tests.
+- Run ruff, mypy and pytest before closing a milestone.
+- Record real commands and outputs in `docs/EXECUTION_LOG.md`.
+- Mark unexecuted experiments `NOT_RUN`.
+- Continue autonomously unless blocked by license, account/token, hardware or irreversible external action.

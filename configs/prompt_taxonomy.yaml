@@ -1,0 +1,90 @@
+prompt_taxonomy:
+  style_families:
+    - id: anatolian_geometric
+      label: "Anadolu Geometric"
+      description: "Traditional Anatolian geometric carpet patterns"
+    - id: kilim_inspired
+      label: "Kilim-inspired"
+      description: "Flat-weave kilim patterns with bold geometric shapes"
+    - id: ottoman_floral
+      label: "Ottoman Floral"
+      description: "Ottoman-era floral and arabesque patterns"
+    - id: persian_medallion
+      label: "Persian Medallion"
+      description: "Central medallion with intricate borders"
+    - id: contemporary_geometric
+      label: "Contemporary Geometric"
+      description: "Modern geometric patterns with clean lines"
+    - id: contemporary_organic
+      label: "Contemporary Organic"
+      description: "Modern organic and abstract patterns"
+    - id: minimalist
+      label: "Minimalist"
+      description: "Simple, restrained patterns with negative space"
+    - id: transitional
+      label: "Transitional"
+      description: "Blend of traditional and contemporary elements"
+
+  motif_families:
+    - ram_horn
+    - diamond
+    - medallion
+    - palmette
+    - arabesque
+    - star
+    - hexagon
+    - tree_of_life
+    - boteh
+    - running_water
+    - elibelinde
+    - hook
+    - chevron
+    - lattice
+    - rosette
+    - vine_scroll
+
+  compositions:
+    - central_medallion
+    - all_over_repeat
+    - directional
+    - corner_and_field
+    - panel
+    - stripe
+    - concentric
+
+  border_structures:
+    - multi_band
+    - single_band
+    - no_border
+    - corner_resolved
+    - running_pattern
+
+  repeat_structures:
+    - full_drop
+    - half_drop
+    - brick
+    - mirror
+    - rotational
+    - random
+
+  symmetry_types:
+    - bilateral
+    - quadrilateral
+    - rotational_2
+    - rotational_4
+    - asymmetric
+
+  textures:
+    - flat_woven
+    - pile
+    - embossed
+    - distressed
+    - smooth
+
+  render_intents:
+    - flat_design
+    - room_mockup
+
+  note: >
+    These labels are design vocabulary aids, not cultural authenticity guarantees.
+    See docs/DATA_CARD.md for limitations on cultural classification.

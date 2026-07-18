@@ -1,0 +1,15 @@
+{
+  "style_family": "anatolian_geometric",
+  "motifs": ["diamond", "star", "ram_horn"],
+  "composition": "central_medallion",
+  "border": "multi_band",
+  "symmetry": "quadrilateral",
+  "palette_id": "classic_red_navy_v1",
+  "free_text": "Balanced field with a strong central focal point",
+  "seed": 42,
+  "width": 768,
+  "height": 768,
+  "steps": 30,
+  "guidance_scale": 7.0,
+  "model_id": "demo-procedural-v1"
+}

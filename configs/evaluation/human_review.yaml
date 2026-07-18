@@ -1,0 +1,34 @@
+human_review:
+  rubric:
+    - name: prompt_adherence
+      description: "How well the design matches the text prompt"
+      scale: [1, 2, 3, 4, 5]
+    - name: visual_coherence
+      description: "Overall visual quality and coherence"
+      scale: [1, 2, 3, 4, 5]
+    - name: motif_consistency
+      description: "Consistency and quality of motif patterns"
+      scale: [1, 2, 3, 4, 5]
+    - name: border_completeness
+      description: "Quality and completeness of border design"
+      scale: [1, 2, 3, 4, 5]
+    - name: palette_appeal
+      description: "Color palette harmony and appeal"
+      scale: [1, 2, 3, 4, 5]
+    - name: repeatability_impression
+      description: "Impression of pattern repeatability"
+      scale: [1, 2, 3, 4, 5]
+    - name: overall_design_preference
+      description: "Overall design preference"
+      scale: [1, 2, 3, 4, 5]
+
+  protocol:
+    blinding: true
+    min_reviewers: 2
+    random_order: true
+    lock_before_milestone: true
+
+note: >
+  Human review configuration per spec Section 20.3.
+  Rubric must be locked before evaluation milestone begins.
+  Base and LoRA identities are hidden during review.

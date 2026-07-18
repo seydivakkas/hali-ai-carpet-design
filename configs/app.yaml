@@ -1,0 +1,34 @@
+app:
+  name: "Halı AI Carpet Design"
+  version: "0.1.0"
+  description: "Traceable Diffusion-Based Carpet Design Studio"
+
+device:
+  preference: auto  # auto | cuda | cpu | mps
+  dtype: float16
+  memory_optimization:
+    attention_slicing: true
+    vae_slicing: true
+    vae_tiling: false
+    model_cpu_offload: false
+    sequential_cpu_offload: false
+    use_sdpa: true
+    use_xformers: false
+
+generation:
+  default_width: 1024
+  default_height: 1024
+  default_steps: 30
+  default_guidance_scale: 7.0
+  max_batch_size: 16
+  max_width: 2048
+  max_height: 2048
+  min_width: 512
+  min_height: 512
+
+security:
+  max_image_pixels: 178956970
+  max_upload_size_mb: 50
+  max_batch_items: 64
+  telemetry_enabled: false
+  send_images_to_api: false

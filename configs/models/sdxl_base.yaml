@@ -1,0 +1,20 @@
+model:
+  model_id: sdxl_base_v1
+  repository_id: stabilityai/stable-diffusion-xl-base-1.0
+  revision: main
+  license: "openrail++"
+  status: NOT_FOUND
+
+scheduler:
+  name: EulerDiscreteScheduler
+  config:
+    num_train_timesteps: 1000
+    beta_start: 0.00085
+    beta_end: 0.012
+    beta_schedule: scaled_linear
+
+inference:
+  default_steps: 30
+  default_guidance_scale: 7.0
+  default_width: 1024
+  default_height: 1024

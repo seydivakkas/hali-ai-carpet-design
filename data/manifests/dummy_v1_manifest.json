@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "dummy_v1",
+  "source": {},
+  "counts": {
+    "total": 1,
+    "train": 1
+  },
+  "files": [
+    {
+      "relative_path": "dummy1.jpg",
+      "sha256": "550fe7e38ffd082183ae9f341ced29fe7b49a0ed56f4c108f7759b18a3962331",
+      "source_object_id": "",
+      "source_url": "",
+      "license": "cc0",
+      "width": 0,
+      "height": 0,
+      "caption_path": "",
+      "style_labels": [],
+      "palette_labels": [],
+      "split": "train"
+    }
+  ],
+  "manifest_sha256": ""
+}

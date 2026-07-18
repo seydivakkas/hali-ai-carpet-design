@@ -1,0 +1,25 @@
+FROM nvidia/cuda:11.8.0-runtime-ubuntu22.04
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN apt-get update && apt-get install -y \
+    python3.11 \
+    python3-pip \
+    build-essential \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN ln -s /usr/bin/python3.11 /usr/bin/python
+
+WORKDIR /app
+
+RUN pip install uv
+COPY pyproject.toml .
+RUN uv pip install --system -e .
+
+COPY . .
+
+EXPOSE 8501
+CMD ["uv", "run", "carpet-designer", "serve"]

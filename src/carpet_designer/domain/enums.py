@@ -1,0 +1,123 @@
+"""Domain enumerations and status constants."""
+
+from __future__ import annotations
+
+from enum import StrEnum
+
+
+class Status(StrEnum):
+    """Universal status codes per spec Section 3.3."""
+
+    NOT_RUN = "NOT_RUN"
+    PASS = "PASS"
+    FAIL = "FAIL"
+    BLOCKED = "BLOCKED"
+    HARDWARE_BLOCKED = "HARDWARE_BLOCKED"
+    LICENSE_BLOCKED = "LICENSE_BLOCKED"
+    PASS_WITH_RESTRICTIONS = "PASS_WITH_RESTRICTIONS"
+    DEMO_ONLY = "DEMO_ONLY"
+
+
+class LoRAStatus(StrEnum):
+    """LoRA adapter lifecycle states per spec Section 15.8."""
+
+    DRAFT = "DRAFT"
+    TRAINING = "TRAINING"
+    CANDIDATE = "CANDIDATE"
+    VALIDATED = "VALIDATED"
+    ACTIVE_DEMO = "ACTIVE_DEMO"
+    ACTIVE_COMPANY_PILOT = "ACTIVE_COMPANY_PILOT"
+    REJECTED = "REJECTED"
+    RETIRED = "RETIRED"
+
+
+class ModelStatus(StrEnum):
+    """Base model availability status."""
+
+    AVAILABLE = "AVAILABLE"
+    DOWNLOADING = "DOWNLOADING"
+    NOT_FOUND = "NOT_FOUND"
+    HASH_MISMATCH = "HASH_MISMATCH"
+    LICENSE_BLOCKED = "LICENSE_BLOCKED"
+
+
+class DuplicateClass(StrEnum):
+    """Retrieval duplicate classification per spec Section 18.3."""
+
+    EXACT_DUPLICATE = "EXACT_DUPLICATE"
+    NEAR_DUPLICATE = "NEAR_DUPLICATE"
+    SEMANTICALLY_SIMILAR = "SEMANTICALLY_SIMILAR"
+    PALETTE_SIMILAR = "PALETTE_SIMILAR"
+    NO_CLOSE_MATCH_FOUND = "NO_CLOSE_MATCH_FOUND"
+
+
+class ManufacturingAdvisory(StrEnum):
+    """Manufacturability advisory status per spec Section 19.3."""
+
+    NOT_EVALUATED = "NOT_EVALUATED"
+    DIGITAL_DESIGN_ONLY = "DIGITAL_DESIGN_ONLY"
+    REVIEW_REQUIRED = "REVIEW_REQUIRED"
+    PROFILE_CONSTRAINT_PASS = "PROFILE_CONSTRAINT_PASS"
+    PROFILE_CONSTRAINT_FAIL = "PROFILE_CONSTRAINT_FAIL"
+
+
+class CompositeAdvisory(StrEnum):
+    """Composite design analysis advisory per spec Section 17.5."""
+
+    DESIGN_ANALYSIS_ONLY = "DESIGN_ANALYSIS_ONLY"
+    REVIEW_RECOMMENDED = "REVIEW_RECOMMENDED"
+    NO_PRODUCTION_CLAIM = "NO_PRODUCTION_CLAIM"
+
+
+class CaptionConfidence(StrEnum):
+    """Caption confidence level per spec Section 12.4."""
+
+    HUMAN_VERIFIED = "human_verified"
+    METADATA = "metadata"
+    AUTO_SUGGESTED = "auto_suggested"
+
+
+class DatasetStatus(StrEnum):
+    """Dataset verification status per spec Section 11.4."""
+
+    VERIFIED = "VERIFIED"
+    BLOCKED = "BLOCKED"
+    PENDING = "PENDING"
+    RESTRICTED = "RESTRICTED"
+    INVALID_OR_MISSING = "INVALID_OR_MISSING"
+
+
+class CollectionItemStatus(StrEnum):
+    """Collection item status."""
+
+    CANDIDATE = "CANDIDATE"
+    APPROVED = "APPROVED"
+    REJECTED = "REJECTED"
+
+
+class ErrorCode(StrEnum):
+    """Application error codes per spec Section 39."""
+
+    CD_CONFIG_INVALID = "CD_CONFIG_INVALID"
+    CD_DATASET_NOT_FOUND = "CD_DATASET_NOT_FOUND"
+    CD_DATASET_INVALID = "CD_DATASET_INVALID"
+    CD_DATASET_LICENSE_BLOCKED = "CD_DATASET_LICENSE_BLOCKED"
+    CD_DATASET_STRUCTURE_INVALID = "CD_DATASET_STRUCTURE_INVALID"
+    CD_DATA_LEAKAGE_DETECTED = "CD_DATA_LEAKAGE_DETECTED"
+    CD_MODEL_NOT_READY = "CD_MODEL_NOT_READY"
+    CD_MODEL_DOWNLOAD_BLOCKED = "CD_MODEL_DOWNLOAD_BLOCKED"
+    CD_MODEL_HASH_MISMATCH = "CD_MODEL_HASH_MISMATCH"
+    CD_LORA_NOT_FOUND = "CD_LORA_NOT_FOUND"
+    CD_LORA_INCOMPATIBLE = "CD_LORA_INCOMPATIBLE"
+    CD_LORA_HASH_MISMATCH = "CD_LORA_HASH_MISMATCH"
+    CD_RECIPE_INVALID = "CD_RECIPE_INVALID"
+    CD_IMAGE_INVALID = "CD_IMAGE_INVALID"
+    CD_GENERATION_OOM = "CD_GENERATION_OOM"
+    CD_GENERATION_FAILED = "CD_GENERATION_FAILED"
+    CD_ANALYSIS_FAILED = "CD_ANALYSIS_FAILED"
+    CD_INDEX_NOT_READY = "CD_INDEX_NOT_READY"
+    CD_INDEX_INCOMPATIBLE = "CD_INDEX_INCOMPATIBLE"
+    CD_REPORT_FAILED = "CD_REPORT_FAILED"
+    CD_DATABASE_FAILED = "CD_DATABASE_FAILED"
+    CD_GPU_UNAVAILABLE = "CD_GPU_UNAVAILABLE"
+    CD_UNSUPPORTED_DEVICE = "CD_UNSUPPORTED_DEVICE"
