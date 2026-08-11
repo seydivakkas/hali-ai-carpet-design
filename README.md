@@ -343,46 +343,91 @@ sequenceDiagram
 
 ## 6. Uygulama ekranları
 
-### Tasarım Stüdyosu — aktif Carpet LoRA
+Halı AI Carpet Design; kontrollü tasarım üretimi, referans tabanlı varyant oluşturma, görsel benzerlik araması, LoRA/model yönetişimi, dijital tasarım analizi ve kanıt raporlamasını aynı Streamlit çalışma alanında birleştirir. Aşağıdaki ekranlar çalışan teknik pilot üzerinden alınmıştır.
 
-Motor seçimi formdan bağımsızdır; `SDXL + Carpet LoRA` seçildiğinde en fazla üç kayıtlı adaptör
-hibritlenebilir. Her adaptörün ham etkisi ayrı slider ile değiştirilir; LoRA ID, eğitim koşusu ve
-normalize hibrit payı aynı tabloda görünür. Üretim reçetesi tüm adaptörleri ve gerçek etkilerini ayrı
-alanlarda saklar.
+---
 
-![Tasarım Stüdyosu ve aktif LoRA](docs/assets/readme2/design-studio-lora.png)
+### 1. Ana Dashboard (Yönetim Özeti)
 
-### Varyant Laboratuvarı — referans görselden kontrollü alternatifler
+![Halı AI Carpet Design yönetim özeti ve metrik dashboard'u](docs/screenshots/01-home-dashboard.png)
 
-PNG/JPEG/WEBP halı görseli doğrulanıp içerik hash'iyle yerel artifact deposuna alınır. Kullanıcı stil,
-kompozisyon, palet, motif, bordür, simetri ve çözünürlük alanlarından hangilerinin değişebileceğini ayrı
-kutucuklarla belirler. İşaretlenmeyen özellikler kaynak koruma sözleşmesine eklenir; kaynak paleti ve
-en-boy oranı isteğe bağlı korunur. CPU demo deterministik görsel harmanlama, SDXL ise gerçek
-image-to-image pipeline kullanır.
+Toplam ve başarılı koşu sayıları, ortalama simetri (%95) ve seam sürekliliği (%98) metrikleri, uçtan uca ürün akışı ("Reçete → Üretim → Analiz → Kanıt") ve son üretilen tasarımlar tek bir merkezi gösterge panelinde toplanır.
 
-### Örnek gerçek SDXL + LoRA çıktısı
+---
 
-![Üretilmiş Carpet LoRA halı tasarımı](docs/assets/readme2/generated-carpet.png)
+### 2. Tasarım Stüdyosu — Kontrollü Üretim
 
-### Model ve LoRA kayıt defteri
+![Tasarım Stüdyosu kontrollü SDXL ve Carpet LoRA üretim arayüzü](docs/screenshots/02-design-studio-controls.png)
 
-Kayıt tablosunun altındaki katlanabilir **Eğitim Laboratuvarı**, ana sayfa düzenini değiştirmeden deney
-planı oluşturur, veri manifest hash'ini JSON plana yazar ve açık onayla GPU eğitimini arka planda
-başlatır. Son PID ve log kuyruğu aynı alanda izlenebilir.
+Stil ailesi, motif seçimi, renk paleti, kompozisyon, bordür ve simetri parametreleri yapılandırılmış bir tasarım reçetesine dönüştürülür. Aynı arayüz CPU demo, SDXL ve SDXL + Carpet LoRA motorlarının ortak sözleşme üzerinden seçilmesini ve aktif adaptör ağırlıklarının ayarlanmasını sağlar.
 
-![LoRA kayıt defteri](docs/assets/readme2/lora-registry.png)
+---
 
-### Koleksiyon benzerlik kontrolü
+### 3. Üretim Sonucu ve Dijital Tasarım Analizi
 
-![Koleksiyon arama](docs/assets/readme2/collection-search.png)
+![Üretim sonucu ve dijital tasarım analiz metrikleri paneli](docs/screenshots/03-generation-result-analysis.png)
 
-### Değerlendirme ve kanıt paneli
+Üretilen halı tasarımıyla eşzamanlı olarak simetri, seam sürekliliği, tekrar periyodu ve CIELAB palet kapsamı hesaplanır. Koşu kimliği, deterministik seed, model süresi, üretilen prompt metni ve görsel SHA-256 hash'i PNG, JSON ve HTML formatlarında dışa aktarılabilir.
 
-![Değerlendirme paneli](docs/assets/readme2/evaluation-dashboard.png)
+---
 
-### Sistem sağlığı
+### 4. Varyant Laboratuvarı — Referans Halı Yükleme
 
-![Sistem sağlık ekranı](docs/assets/readme2/system-health.png)
+![Varyant Laboratuvarı referans görsel yükleme ve özellik koruma arayüzü](docs/screenshots/04-variant-lab-reference.png)
+
+Arşivdeki veya mevcut katalogdaki bir halı görseli referans olarak sisteme yüklenir. Kullanıcı hangi tasarım özelliklerinin (stil, kompozisyon, palet, motif, bordür, simetri) dönüştürüleceğini seçerek referans tabanlı kontrollü varyasyon sürecini başlatır.
+
+---
+
+### 5. Varyant Laboratuvarı — Kontrol Paneli
+
+![Varyant Laboratuvarı dönüşüm sözleşmesi ve varyant üretim kontrolleri](docs/screenshots/05-variant-lab-controls.png)
+
+Seçilen özelliklerin hedef parametreleri belirlenir; işaretlenmeyen alanlar kaynak koruma sözleşmesine dâhil edilir. Değişim gücü (denoising strength), varyant adedi, ardışık seed zinciri ve kaynak en-boy oranı ayarlanarak deterministik varyant kümeleri üretilir.
+
+---
+
+### 6. Koleksiyon Araması — Görsel Benzerlik İndeksi
+
+![Koleksiyon araması ve normalize renk dağılımı benzerlik sonuçları](docs/screenshots/06-collection-search.png)
+
+Geçmiş bir tasarım koşusu veya yüklenen yeni bir görsel sorgu olarak kullanılır. Sistem, katalogdaki tasarımları normalize renk dağılımı ve histogram korelasyonuyla karşılaştırarak benzerlik skorlarına göre sıralar (özgünlük veya telif garantisi oluşturmayan görsel benzerlik aracıdır).
+
+---
+
+### 7. Model & LoRA Kayıt Defteri ve Eğitim Laboratuvarı
+
+![Model yönetişimi, LoRA kayıt defteri ve Eğitim Laboratuvarı kontrolleri](docs/screenshots/07-lora-registry-training-lab.png)
+
+Temel model, CUDA ortamı, lisans ve kayıtlı LoRA adaptörlerinin yaşam döngüsü (`ACTIVE_COMPANY_PILOT`, `RETIRED`) SHA-256 özetleriyle yönetilir. Katlanabilir Eğitim Laboratuvarı panelinde caption profili, optimizer adımları, Min-SNR ve checkpoint sınırları deney planı olarak kaydedilir.
+
+---
+
+### 8. Bağımsız HTML Kanıt Raporu
+
+![Tekil koşuya ait bağımsız AI Design Evidence Report çıktısı](docs/screenshots/08-evidence-report.png)
+
+Her koşu için üretilen tasarım görselini base64 formatında içeren, reçete ayrıntılarını, simetri, seam, tekrar ve renk metriklerini tek bir HTML dosyasında toplayan bağımsız kanıt raporudur (imalat veya hukuki özgünlük sertifikası değildir).
+
+---
+
+### 9. Değerlendirme ve Kanıt Merkezi
+
+![Değerlendirme ve kanıt merkezi operasyonel koşu geçmişi](docs/screenshots/09-evaluation-dashboard.png)
+
+Tüm geçmiş tasarım koşularının toplam hacmi, PASS oranları, ortalama simetri/seam değerleri ve çözünürlük bazlı çalışma süreleri izlenir; tek tuşla geçmiş koşulara ait HTML kanıt paketleri indirilebilir.
+
+---
+
+### 10. Sistem Sağlığı ve Doğrulama Matrisi
+
+![Sistem sağlığı ve 11 kontrol bileşeninin doğrulama matrisi](docs/screenshots/10-system-health.png)
+
+Python, OS, GPU, PyTorch, Diffusers, Transformers, PEFT, RAM, Disk, SQLite ve yazılabilir yollardan oluşan 11 bileşenin anlık sağlık durumunu doğrular (ekrandaki 11/11 PASS sonucu yalnızca doğrulamanın yapıldığı test ortamının durumunu gösterir).
+
+---
+
+[📖 Ayrıntılı ekran açıklamaları ve teknik sınırları inceleyin](docs/SCREENSHOTS.md)
 
 ---
 
@@ -768,6 +813,7 @@ Mühendis ve tasarım ekiplerine önerilen 10 dakikalık demo:
 ## 18. Kanıt ve referans dosyaları
 
 - [Teknik doğrulama ve mühendis teslimi](hali-ai-technical-review.md)
+- [Uygulama ekranları ve teknik inceleme](docs/SCREENSHOTS.md)
 - [Dataset ve lisans kayıt defteri](docs/DATASET_AND_LICENSE_REGISTER.md)
 - [Data card](docs/DATA_CARD.md)
 - [RTX 4070 eğitim protokolü](docs/TRAINING_PROTOCOL.md)
