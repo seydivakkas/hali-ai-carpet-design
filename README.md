@@ -8,7 +8,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![SDXL](https://img.shields.io/badge/SDXL-LoRA-6F42C1?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-52%20passing-2EA44F?style=flat-square)
+[![CI](https://github.com/seydivakkas/hali-ai-carpet-design/actions/workflows/ci.yml/badge.svg)](https://github.com/seydivakkas/hali-ai-carpet-design/actions/workflows/ci.yml)
 
 **A provenance-aware SDXL + LoRA design studio for controlled carpet generation, reference-based variants, retrieval and analytical validation.**
 
@@ -25,6 +25,24 @@ Generative design becomes much more useful in an industrial workflow when the ou
 Halı AI Carpet Design turns a structured design brief into reproducible carpet concepts while recording the model, LoRA adapter, seed, prompt recipe, analysis results and source provenance behind each run.
 
 The goal is not to replace the designer. The goal is to provide a measurable **AI-assisted design workspace** for rapid exploration and engineering review.
+
+---
+
+## Minimum reproducible run
+
+The fastest path to a validated local setup is:
+
+```bash
+git clone https://github.com/seydivakkas/hali-ai-carpet-design.git
+cd hali-ai-carpet-design
+uv venv --python 3.11
+uv sync --all-extras
+uv run pytest -q
+uv run carpet-designer doctor
+uv run carpet-designer serve
+```
+
+The CPU demo path does not require a GPU. SDXL / LoRA inference requires the corresponding local model and CUDA environment. Secrets, restricted catalog data, model weights and generated production artifacts are intentionally kept outside Git.
 
 ---
 
@@ -48,7 +66,8 @@ The goal is not to replace the designer. The goal is to provide a measurable **A
 
 | Signal | Current repository evidence |
 |---|---|
-| Automated validation | **52 tests passing** |
+| Automated validation | **52 tests passing** in the documented pilot validation |
+| Live repository health | GitHub Actions `CI` workflow badge above |
 | Runtime environment | Python 3.11 · PyTorch 2.8 · CUDA 12.6 |
 | Training setup | SDXL LoRA optimized for an 8 GiB GPU environment |
 | Governed training set | 386 normalized images across permitted/private and open sources |
